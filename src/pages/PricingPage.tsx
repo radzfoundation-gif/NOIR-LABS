@@ -73,7 +73,7 @@ const PricingPage = () => {
 
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:3001/api/create-invoice', {
+            const response = await fetch('/api/create-invoice', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const PricingPage = () => {
             }
         } catch (error) {
             console.error('Payment Error:', error);
-            alert('Payment service connection failed. Make sure the backend server (port 3001) is running!');
+            alert('Payment service connection failed. Please check your network connection.');
         } finally {
             setIsLoading(false);
         }
