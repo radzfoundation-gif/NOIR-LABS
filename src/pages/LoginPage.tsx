@@ -129,14 +129,7 @@ const LoginPage: React.FC = () => {
                         </button>
                     </form>
                     <div className="relative my-10">
-                        <div className="absolute inset-0 flex items-center">
-                            <div className="flex-1 text-center md:text-left pt-12 md:pt-0">
-                                {/* Use inline styling for text stroke as Tailwind arbitrary values can be tricky with specific chromium versions sometimes */}
-                                <h1 className="text-6xl sm:text-7xl md:text-[10rem] font-black leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '3px #ff71ce', color: 'transparent' }}>
-                                    JOIN
-                                </h1>
-                            </div>
-                        </div>
+
                         <div className="relative flex justify-center">
                             <span className="bg-white px-4 text-xs font-black uppercase tracking-widest text-zinc-400">or connect with</span>
                         </div>
