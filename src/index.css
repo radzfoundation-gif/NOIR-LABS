@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 90%;
+  }
+
+  body {
+    @apply font-display text-zinc-900 bg-white selection:bg-lab-pink/30;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer components {
+
+  /* Custom classes from code.html */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
+
+  .tape-label {
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background-color: white;
+    border: 2px solid black;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: rotate(-2deg);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .tape-label::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    height: 100%;
+    width: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    transform: skewX(-12deg);
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-4 px-6 py-4 border-4 border-black rounded-2xl font-black text-lg transition-all hover:bg-pop-yellow hover:-translate-y-1 active:translate-y-0 shadow-pop mb-4;
+  }
+
+  .sidebar-item.active {
+    @apply bg-accent-green;
+  }
+
+  .stat-card {
+    @apply border-4 border-black p-6 rounded-[2rem] shadow-pop transition-transform hover:scale-[1.02];
+  }
+
+  .activity-frame {
+    @apply border-[4px] border-black rounded-3xl p-6 bg-white relative shadow-pop mb-6;
+  }
+
+  .badge-sticker {
+    @apply bg-lab-pink text-black border-4 border-black px-4 py-1 font-black uppercase text-xs rotate-3 shadow-pop inline-block;
+  }
+
+  .nav-glass {
+    @apply bg-white/80 backdrop-blur-xl border-2 border-black shadow-pop transition-all;
+  }
+
+  .card-pop {
+    @apply bg-white border-2 border-black rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-pop-hover hover:-translate-y-1;
+  }
+
+  .sticker-btn {
+    @apply px-4 py-2 rounded-full border-2 border-black font-bold text-sm transition-all hover:scale-105 active:scale-95 shadow-sticker;
+  }
+
+  .group:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.98);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .blob-pop {
+    position: fixed;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  /* Custom classes from 1.html */
+  .doodle-bg {
+    background-color: #f5f8f5;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .neobrutal-card {
+    border: 4px solid #000;
+    box-shadow: 12px 12px 0px 0px #000;
+  }
+
+  .neobrutal-input {
+    border: 3px solid #000;
+    transition: all 0.2s ease;
+  }
+
+  .neobrutal-input:focus {
+    box-shadow: 4px 4px 0px 0px #0df20d;
+    transform: translate(-2px, -2px);
+    outline: none;
+  }
+
+  .taped-note {
+    transform: rotate(-2deg);
+  }
+
+  .tape-strip {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .floating-icon {
+    @apply absolute pointer-events-none opacity-20 text-6xl;
+  }
+
+
+
+
+  /* Custom classes for Pricing Page */
+  .card-pricing {
+    @apply bg-white border-[3px] border-black rounded-[2.5rem] p-10 flex flex-col transition-all duration-300 hover:-translate-y-2;
+  }
+
+  .btn-pill {
+    @apply px-8 py-4 rounded-full border-2 border-black font-black text-lg transition-all hover:scale-105 active:scale-95 text-center;
+  }
+
+  .doodle-accent {
+    @apply absolute pointer-events-none opacity-20;
+  }
+
+  /* Global Loader Styles */
+  .text-pop-title {
+    -webkit-text-stroke: 3px black;
+    text-shadow: 8px 8px 0px #ff71ce;
+  }
+
+  .flask-container {
+    position: relative;
+    width: 240px;
+    height: 280px;
+    filter: drop-shadow(10px 10px 0px #000);
+  }
+
+  .flask-body {
+    @apply border-[6px] border-black;
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    height: 180px;
+    left: 30px;
+    border-radius: 50% 50% 15% 15%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 5;
+  }
+
+  .flask-neck {
+    @apply border-[6px] border-black;
+    position: absolute;
+    top: 10px;
+    left: 95px;
+    width: 50px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: none;
+    z-index: 4;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .flask-rim {
+    @apply border-[6px] border-black;
+    position: absolute;
+    top: 0;
+    left: 85px;
+    width: 70px;
+    height: 15px;
+    background: white;
+    border-radius: 999px;
+    z-index: 6;
+  }
+
+  .liquid-vibrant {
+    @apply bg-accent-green shadow-neon-green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    animation: liquid-rise 3s ease-in-out infinite alternate;
+  }
+
+  .liquid-vibrant::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -25%;
+    width: 150%;
+    height: 30px;
+    background: #05ffa1;
+    border-radius: 50%;
+    box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.5);
+  }
+
+  @keyframes liquid-rise {
+    0% {
+      height: 30%;
+      transform: rotate(0deg);
+    }
+
+    100% {
+      height: 80%;
+      transform: rotate(0deg);
+    }
+  }
+
+  .progress-block {
+    @apply border-4 border-black bg-white;
+    width: 40px;
+    height: 40px;
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .progress-block.active {
+    @apply bg-pop-purple shadow-neon-purple-lg;
+  }
+
+  .floating-doodle {
+    @apply absolute opacity-90;
+    pointer-events: none;
+    animation: float-doodle 3s ease-in-out infinite;
+  }
+
+  @keyframes float-doodle {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .corner-gradient-pink {
+    position: fixed;
+    width: 60vw;
+    height: 60vw;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.6;
+    background: radial-gradient(circle, #ff71ce 0%, transparent 70%);
+    top: -20%;
+    left: -10%;
+  }
+
+  .corner-gradient-cyan {
+    position: fixed;
+    width: 60vw;
+    height: 60vw;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.6;
+    background: radial-gradient(circle, #01cdfe 0%, transparent 70%);
+    bottom: -20%;
+    right: -10%;
+  }
+}
