@@ -47,107 +47,100 @@ const LandingPage: React.FC = () => {
             <div className="blob-pop bg-accent-green w-[30rem] h-[30rem] top-[40%] -right-20 rounded-full"></div>
             <div className="blob-pop bg-secondary w-[50rem] h-[50rem] -bottom-40 left-1/2 -translate-x-1/2 rounded-full"></div>
 
-            <header className="fixed top-8 left-0 right-0 z-[100] px-6">
-                <ScrollReveal mode="fade-in" width="100%" className='flex justify-center'>
-                    <nav className="mx-auto max-w-fit nav-glass rounded-full px-4 py-2 flex items-center gap-2">
-                        <div className="flex items-center gap-2 pl-2 pr-4 border-r-2 border-black mr-2">
-                            <span className="material-symbols-outlined text-lab-pink fill-1">science</span>
-                            <span className="font-bold tracking-tighter text-lg uppercase">Noir Labs</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Link to="/labs" className="px-4 py-2 text-sm font-bold hover:bg-pop-yellow rounded-full transition-colors border-2 border-transparent hover:border-black">Experiments</Link>
-                            <Link to="/pricing" className="px-4 py-2 text-sm font-bold hover:bg-accent-green rounded-full transition-colors border-2 border-transparent hover:border-black">Pricing</Link>
-                            <div className="relative group">
-                                <button className="flex items-center gap-1 px-4 py-2 text-sm font-bold bg-white border-2 border-black rounded-full hover:bg-accent-green transition-all shadow-sticker">
-                                    Platforms
-                                    <span className="material-symbols-outlined text-[18px]">expand_more</span>
-                                </button>
-                                <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-6 w-[640px]">
-                                    <div className="bg-white border-4 border-black p-8 rounded-[3rem] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] grid grid-cols-2 gap-6">
-                                        <a className="group/card relative p-8 rounded-2xl bg-lab-pink/10 border-2 border-black hover:bg-lab-pink/20 transition-all" href="#">
-                                            <div className="tape-label absolute -top-3 left-4 bg-lab-pink text-white border-black">AI CORE</div>
-                                            <div className="w-16 h-16 rounded-2xl bg-white border-2 border-black flex items-center justify-center mb-6 shadow-pop">
-                                                <span className="material-symbols-outlined text-black text-3xl fill-1">psychology</span>
-                                            </div>
-                                            <h3 className="text-2xl font-black mb-2">NOIR AI</h3>
-                                            <p className="text-sm font-medium text-zinc-700 leading-snug">
-                                                Experimental AI models and inference infrastructure playground.
-                                            </p>
-                                        </a>
-                                        <a className="group/card relative p-8 rounded-2xl bg-accent-green/10 border-2 border-black hover:bg-accent-green/20 transition-all" href="#">
-                                            <div className="tape-label absolute -top-3 left-4 bg-accent-green text-black border-black">DEV TOOLS</div>
-                                            <div className="w-16 h-16 rounded-2xl bg-white border-2 border-black flex items-center justify-center mb-6 shadow-pop">
-                                                <span className="material-symbols-outlined text-black text-3xl">terminal</span>
-                                            </div>
-                                            <h3 className="text-2xl font-black mb-2">NOIR CODE</h3>
-                                            <p className="text-sm font-medium text-zinc-700 leading-snug">
-                                                SDKs and APIs optimized for autonomous software engineering.
-                                            </p>
-                                        </a>
-                                    </div>
+            <header className="fixed top-4 left-0 right-0 z-[100] px-4 md:px-6">
+                <nav className="mx-auto max-w-fit nav-glass rounded-full px-3 py-2 md:px-4 md:py-2 flex items-center gap-2">
+                    <div className="flex items-center gap-2 pl-2 pr-4 border-r-2 border-black mr-2">
+                        <span className="material-symbols-outlined text-lab-pink fill-1 text-xl md:text-2xl">science</span>
+                        <span className="font-bold tracking-tighter text-base md:text-lg uppercase hidden sm:inline">Noir Labs</span>
+                    </div>
+                    <div className="flex items-center gap-1 md:gap-3">
+                        <Link to="/labs" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold hover:bg-pop-yellow rounded-full transition-colors border-2 border-transparent hover:border-black">Experiments</Link>
+                        <Link to="/pricing" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold bg-white border-2 border-black rounded-full hover:bg-accent-green transition-all shadow-sticker">Pricing</Link>
+                        <div className="relative group">
+                            <button className="flex items-center gap-1 px-4 py-2 text-sm font-bold bg-white border-2 border-black rounded-full hover:bg-accent-green transition-all shadow-sticker">
+                                Platforms
+                                <span className="material-symbols-outlined text-[18px]">expand_more</span>
+                            </button>
+                            <div className="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-6 w-[640px]">
+                                <div className="bg-white border-4 border-black p-8 rounded-[3rem] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] grid grid-cols-2 gap-6">
+                                    <a className="group/card relative p-8 rounded-2xl bg-lab-pink/10 border-2 border-black hover:bg-lab-pink/20 transition-all" href="#">
+                                        <div className="tape-label absolute -top-3 left-4 bg-lab-pink text-white border-black">AI CORE</div>
+                                        <div className="w-16 h-16 rounded-2xl bg-white border-2 border-black flex items-center justify-center mb-6 shadow-pop">
+                                            <span className="material-symbols-outlined text-black text-3xl fill-1">psychology</span>
+                                        </div>
+                                        <h3 className="text-2xl font-black mb-2">NOIR AI</h3>
+                                        <p className="text-sm font-medium text-zinc-700 leading-snug">
+                                            Experimental AI models and inference infrastructure playground.
+                                        </p>
+                                    </a>
+                                    <a className="group/card relative p-8 rounded-2xl bg-accent-green/10 border-2 border-black hover:bg-accent-green/20 transition-all" href="#">
+                                        <div className="tape-label absolute -top-3 left-4 bg-accent-green text-black border-black">DEV TOOLS</div>
+                                        <div className="w-16 h-16 rounded-2xl bg-white border-2 border-black flex items-center justify-center mb-6 shadow-pop">
+                                            <span className="material-symbols-outlined text-black text-3xl">terminal</span>
+                                        </div>
+                                        <h3 className="text-2xl font-black mb-2">NOIR CODE</h3>
+                                        <p className="text-sm font-medium text-zinc-700 leading-snug">
+                                            SDKs and APIs optimized for autonomous software engineering.
+                                        </p>
+                                    </a>
                                 </div>
                             </div>
-                            <Link to="/survey" className="px-4 py-2 text-sm font-bold hover:bg-secondary/20 rounded-full transition-colors border-2 border-transparent hover:border-black">Research</Link>
                         </div>
-                        <div className="ml-4 flex items-center gap-3">
-                            {session ? (
-                                <Link to="/profile">
-                                    <div className="w-12 h-12 rounded-full border-2 border-black overflow-hidden shadow-pop hover:scale-110 transition-transform cursor-pointer bg-white" title={session.user.email}>
-                                        <img
-                                            src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${session.user.email}`}
-                                            alt="User Avatar"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                </Link>
-                            ) : (
-                                <Link to="/login" className="bg-black text-white px-6 py-2 rounded-full text-sm font-black hover:bg-lab-pink hover:text-black transition-all border-2 border-black">
-                                    SIGN IN
-                                </Link>
-                            )}
-                        </div>
-                    </nav>
-                </ScrollReveal>
+                        <Link to="/survey" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold hover:bg-secondary/20 rounded-full transition-colors border-2 border-transparent hover:border-black hidden sm:inline-block">Research</Link>
+                    </div>
+                    <div className="ml-4 flex items-center gap-3">
+                        {session ? (
+                            <Link to="/profile">
+                                <div className="w-12 h-12 rounded-full border-2 border-black overflow-hidden shadow-pop hover:scale-110 transition-transform cursor-pointer bg-white" title={session.user.email}>
+                                    <img
+                                        src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${session.user.email}`}
+                                        alt="User Avatar"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </Link>
+                        ) : (
+                            <Link to="/login" className="bg-black text-white px-6 py-2 rounded-full text-sm font-black hover:bg-lab-pink hover:text-black transition-all border-2 border-black">
+                                SIGN IN
+                            </Link>
+                        )}
+                    </div>
+                </nav>
             </header>
 
-            <main className="relative z-10 pt-48 pb-24">
-                <section className="max-w-7xl mx-auto px-6 text-center mb-40">
-                    <ScrollReveal mode="scale-up" duration={0.6} className="mb-12 inline-flex items-center gap-3">
-                        <div className="px-6 py-2 rounded-full bg-pop-yellow border-2 border-black shadow-pop font-black text-xs uppercase tracking-[0.2em] -rotate-1">
-                            <span className="flex h-3 w-3 rounded-full bg-lab-pink animate-ping inline-block mr-2"></span>
-                            Public Beta v0.4
+            <main className="relative z-10 pt-32 md:pt-48 pb-12 md:pb-24">
+                <section className="max-w-7xl mx-auto px-4 md:px-6 mb-20 md:mb-40 relative">
+                    <span className="material-symbols-outlined doodle-accent text-6xl md:text-8xl top-10 left-0 md:left-20 -rotate-12">neurology</span>
+                    <span className="material-symbols-outlined doodle-accent text-7xl md:text-9xl bottom-20 right-0 md:right-20 rotate-12">psychology</span>
+
+                    <div className="text-center relative z-20">
+                        <div className="inline-block mb-6 md:mb-8 relative group">
+                            <div className="absolute inset-0 bg-pop-yellow blur-xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                            <span className="relative tape-label bg-white border-2 border-black px-4 md:px-6 py-2 md:py-3 text-sm md:text-lg font-black tracking-[0.2em] shadow-pop -rotate-2 hover:rotate-0 transition-transform cursor-crosshair">
+                                RESEARCH PREVIEW
+                            </span>
                         </div>
-                    </ScrollReveal>
-
-                    <div className="relative">
-                        <ScrollReveal mode="fade-up" delay={0.2} width="100%">
-                            <h1 className="text-6xl md:text-[8rem] font-black tracking-tighter leading-none mb-12 select-none">
-                                <span className="inline-block hover:-rotate-3 transition-transform">NOIR</span><br />
-                                <span className="text-lab-pink italic inline-block hover:rotate-3 transition-transform drop-shadow-[4px_4px_0px_#000]">LABS</span>
-                            </h1>
-                        </ScrollReveal>
-                        <div className="absolute -top-10 left-[15%] w-24 h-24 bg-secondary/20 rounded-full blur-xl -z-10 animate-pulse"></div>
-                        <div className="absolute top-20 right-[20%] material-symbols-outlined text-6xl text-accent-green rotate-12 select-none opacity-50">auto_awesome</div>
-                    </div>
-
-                    <ScrollReveal mode="fade-up" delay={0.4} width="100%">
-                        <p className="text-2xl md:text-3xl font-bold text-zinc-600 max-w-3xl mx-auto mb-16 leading-tight">
-                            Experimental AI research that's <span className="bg-accent-green px-2 border-b-4 border-black">boldly curious</span> and radically open.
+                        <h1 className="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter mb-6 md:mb-8 leading-[0.9] md:leading-[0.85] uppercase">
+                            Redefining<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lab-pink via-pop-purple to-secondary animate-gradient-x drop-shadow-[4px_4px_0px_#000]">Neural</span><br />
+                            Architectures
+                        </h1>
+                        <p className="text-lg md:text-2xl font-bold text-zinc-600 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed px-4">
+                            Noir Labs is an experimental research facility pushing the boundaries of generative AI. We build models that <span className="text-black bg-pop-yellow/30 px-2 rounded-lg">think differently</span>.
                         </p>
-                    </ScrollReveal>
-
-                    <ScrollReveal mode="fade-up" delay={0.6} width="100%" className='flex flex-col sm:flex-row gap-6 justify-center items-center'>
-                        <Link to="/labs" className="px-12 h-20 bg-black text-white rounded-2xl font-black text-xl hover:bg-lab-pink hover:text-black hover:shadow-pop transition-all border-2 border-black flex items-center gap-3">
-                            EXPLORE EXPERIMENTS
-                            <span className="material-symbols-outlined">bolt</span>
-                        </Link>
-                        <Link to="/waitlist" className="px-12 h-20 bg-white border-2 border-black rounded-2xl font-black text-xl hover:bg-pop-yellow transition-all flex items-center gap-2 shadow-pop justify-center">
-                            JOIN WAITLIST
-                        </Link>
-                    </ScrollReveal>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-4">
+                            <Link to="/labs" className="px-12 h-20 bg-black text-white rounded-2xl font-black text-xl hover:bg-lab-pink hover:text-black hover:shadow-pop transition-all border-2 border-black flex items-center gap-3">
+                                EXPLORE EXPERIMENTS
+                                <span className="material-symbols-outlined">bolt</span>
+                            </Link>
+                            <Link to="/waitlist" className="px-12 h-20 bg-white border-2 border-black rounded-2xl font-black text-xl hover:bg-pop-yellow transition-all flex items-center gap-2 shadow-pop justify-center">
+                                JOIN WAITLIST
+                            </Link>
+                        </div>
+                    </div>
                 </section>
 
-                <section className="max-w-7xl mx-auto px-6 mb-40">
+                <section className="max-w-7xl mx-auto px-4 md:px-6 mb-20 md:mb-40">
                     <div className="flex items-end justify-between mb-16 px-4">
                         <ScrollReveal mode="slide-right">
                             <div>
@@ -213,7 +206,7 @@ const LandingPage: React.FC = () => {
 
                         <ScrollReveal mode="fade-up" delay={0.5} width="100%">
                             <div className="card-pop relative group aspect-[4/5]">
-                                <img alt="Language AI" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3doK7DXHyhhQDj9CVi_eryVJqvG36UqL1U2kFg8JJtKTr3tX9bwlaGUs97nmdiupSio62dsrmAlj4Gla0WFfYoFAdBZhx3d5O24XPR3usLqRaNjDA85o4Udo26VB80PZTnJoYmM235TYJkmCHnpFe_jWpMwFZwukFR6qug-WprzhDCjLefyTN8YJJwL2_RFEhHDe0snVT-PNAY2F9c35bFjCO580GxDDE9-sEBYK49oUVsrztyWe5soK7UdBVIZXJI63pRyFtZ7M" />
+                                <img alt="Language AI" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3doK7DXHyhhQDj9CVi_eryVJqvG36UqL1U2kFg8JJtKTr3tX9bwlaGUs97nmdiupSio62dsrmAlj4Gla0WFfYoFAdBZhx3d5O24XPR3usLqRaNjDA85o4Udo26VB80PZTnJoYmM235TYJkmCHnpFe_jWpMwZJwukFR6qug-WprzhDC3LefjTN8YJJwL2_RFEhHDe0snVT-PNAY2F9c35bFjCO580GxDDE9-sEBYK49oUVsrztyWe5soK7UdBVIZXJI63pRyFtZ7M" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
                                 <div className="absolute top-6 left-6">
                                     <div className="tape-label bg-secondary text-white border-black">LANGUAGE</div>
@@ -302,6 +295,28 @@ const LandingPage: React.FC = () => {
             </main>
 
             <footer className="bg-white pt-24 pb-12 border-t-4 border-black">
+                <section className="bg-black text-white py-20 md:py-32 relative overflow-hidden -skew-y-2 border-y-[6px] border-black my-20 md:my-40">
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                    <div className="max-w-7xl mx-auto px-4 md:px-6 relative skew-y-2">
+                        <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-20">
+                            <div className="flex-1 text-center md:text-left">
+                                <h2 className="text-5xl md:text-7xl font-black mb-8 leading-none">
+                                    The <span className="text-accent-green">Singularity</span><br />
+                                    Is Near.
+                                </h2>
+                                <p className="text-xl md:text-2xl font-bold text-zinc-400 mb-10 leading-relaxed">
+                                    Our models are detecting patterns invisible to the human eye. Join the waitlist to access our developer preview.
+                                </p>
+                                <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
+                                    <input className="flex-1 bg-white/10 border-2 border-white/20 rounded-xl px-6 h-14 font-bold text-white placeholder:text-white/30 focus:outline-none focus:border-accent-green transition-colors" placeholder="Enter email address" />
+                                    <button className="h-14 px-8 bg-accent-green text-black font-black uppercase tracking-wider rounded-xl hover:bg-white transition-all shadow-neon-green">
+                                        SUBSCRIBE
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
                         <div className="col-span-2">
@@ -357,7 +372,7 @@ const LandingPage: React.FC = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="pt-8 border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-black uppercase tracking-[0.2em] text-zinc-400">
+                    <div className="pt-8 border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 text-center md:text-left">
                         <p>© 2024 NOIR LABS. RESEARCH ONLY.</p>
                         <div className="flex items-center gap-6">
                             <span className="flex items-center gap-2 bg-accent-green/20 text-black px-3 py-1 rounded-full border border-black">

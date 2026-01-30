@@ -133,7 +133,7 @@ const AdminPage: React.FC = () => {
 
     const renderDashboard = () => (
         <>
-            <div className="grid grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <div className="border-[4px] border-black p-6 bg-white transition-all hover:-translate-x-1 hover:-translate-y-1 shadow-brutal-green">
                     <div className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-2">Total Users</div>
                     <div className="text-5xl font-black italic"><CountUp value={stats.users} /></div>
@@ -167,18 +167,18 @@ const AdminPage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-8">
-                <div className="col-span-2 border-[4px] border-black bg-white p-8 shadow-brutal-lg">
-                    <div className="flex justify-between items-center mb-8">
-                        <h2 className="text-3xl font-black uppercase tracking-tighter">System Health</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2 border-[4px] border-black bg-white p-4 md:p-8 shadow-brutal-lg">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                        <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter">System Health</h2>
                         <span className="font-black text-sm text-zinc-400">FLUX_CORE_01</span>
                     </div>
-                    <div className="flex items-center gap-8 mb-12">
-                        <div className="relative w-16 h-20">
+                    <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+                        <div className="relative w-16 h-20 flex-shrink-0 hidden md:block">
                             <div className="absolute inset-0 border-[4px] border-black bg-zinc-100 z-10" style={{ clipPath: 'polygon(30% 0%, 70% 0%, 70% 35%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 30% 35%)' }}></div>
                             <div className="absolute bottom-0 left-0 w-full bg-accent-green z-20" style={{ height: '78%', clipPath: 'polygon(30% 0%, 70% 0%, 70% 35%, 100% 85%, 100% 100%, 0% 100%, 0% 85%, 30% 35%)' }}></div>
                         </div>
-                        <div className="flex-grow">
+                        <div className="flex-grow w-full">
                             <div className="flex justify-between mb-2">
                                 <span className="font-black text-sm uppercase tracking-widest">Research Progress</span>
                                 <span className="font-black text-sm">78.4%</span>
@@ -207,7 +207,7 @@ const AdminPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 space-y-6">
+                <div className="lg:col-span-1 space-y-6">
                     <div className="border-[4px] border-black bg-white p-6 shadow-brutal">
                         <h3 className="text-xl font-black uppercase tracking-tighter mb-6">Quick Actions</h3>
                         <div className="grid grid-cols-2 gap-4">
@@ -424,7 +424,7 @@ const AdminPage: React.FC = () => {
             <span className="material-symbols-outlined absolute pointer-events-none opacity-20 select-none z-0 text-5xl text-pop-yellow top-1/2 left-10 rotate-45">flare</span>
             <span className="material-symbols-outlined absolute pointer-events-none opacity-20 select-none z-0 text-8xl text-pop-purple top-20 right-10 -rotate-6">auto_awesome</span>
 
-            <aside className="w-72 border-r-[4px] border-black bg-white p-6 z-10 flex flex-col overflow-y-auto h-screen sticky top-0 no-scrollbar">
+            <aside className="hidden lg:flex w-72 border-r-[4px] border-black bg-white p-6 z-10 flex-col overflow-y-auto h-screen sticky top-0 no-scrollbar">
                 <Link to="/" className="flex items-center gap-3 mb-12">
                     <div className="p-2 border-[4px] border-black bg-black">
                         <span className="material-symbols-outlined text-white text-3xl fill-1">science</span>
@@ -444,8 +444,31 @@ const AdminPage: React.FC = () => {
                 </div>
             </aside>
 
-            <main className="flex-grow overflow-y-auto p-8 relative z-10 h-screen no-scrollbar">
-                <header className="flex justify-between items-end mb-12">
+            {/* Mobile Header with Scrollable Nav */}
+            <header className="lg:hidden fixed top-0 w-full bg-white border-b-4 border-black z-50">
+                <div className="flex items-center justify-between p-4">
+                    <Link to="/" className="flex items-center gap-2">
+                        <div className="p-1 border-[2px] border-black bg-black">
+                            <span className="material-symbols-outlined text-white text-xl fill-1">science</span>
+                        </div>
+                        <span className="font-black text-lg tracking-tighter uppercase leading-none">NOIR LABS</span>
+                    </Link>
+                    <button onClick={() => supabase.auth.signOut().then(() => navigate('/login'))}>
+                        <span className="material-symbols-outlined font-black">logout</span>
+                    </button>
+                </div>
+                <div className="overflow-x-auto no-scrollbar px-4 pb-2 flex gap-4">
+                    <button onClick={() => setActiveTab('dashboard')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'dashboard' ? 'bg-accent-green' : 'bg-white'}`}>Dashboard</button>
+                    <button onClick={() => setActiveTab('experiments')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'experiments' ? 'bg-accent-green' : 'bg-white'}`}>Experiments</button>
+                    <button onClick={() => setActiveTab('users')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'users' ? 'bg-accent-green' : 'bg-white'}`}>Users</button>
+                    <button onClick={() => setActiveTab('waitlist')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'waitlist' ? 'bg-accent-green' : 'bg-white'}`}>Waitlist</button>
+                    <button onClick={() => setActiveTab('data')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'data' ? 'bg-accent-green' : 'bg-white'}`}>Data</button>
+                    <button onClick={() => setActiveTab('settings')} className={`whitespace-nowrap px-3 py-1 border-[2px] border-black uppercase font-black text-xs ${activeTab === 'settings' ? 'bg-accent-green' : 'bg-white'}`}>Settings</button>
+                </div>
+            </header>
+
+            <main className="flex-grow overflow-y-auto p-4 pt-40 md:p-8 md:pt-8 relative z-10 h-screen no-scrollbar">
+                <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4">
                     <div>
                         <div className="inline-block bg-black text-white px-4 py-1 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
                             Admin Session / Active
@@ -478,7 +501,7 @@ const AdminPage: React.FC = () => {
                 {activeTab === 'settings' && renderPlaceholder('System Core')}
 
             </main>
-            <div className="w-16 border-l-[4px] border-black bg-white flex flex-col items-center py-8 gap-8 h-screen sticky top-0">
+            <div className="hidden lg:flex w-16 border-l-[4px] border-black bg-white flex-col items-center py-8 gap-8 h-screen sticky top-0">
                 <div className="w-10 h-10 rounded-full border-[4px] border-black bg-lab-pink overflow-hidden">
                     <img
                         alt="avatar"

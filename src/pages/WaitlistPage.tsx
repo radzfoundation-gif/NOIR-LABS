@@ -44,11 +44,13 @@ const WaitlistPage: React.FC = () => {
             <span className="material-symbols-outlined absolute text-zinc-200 pointer-events-none select-none -z-10 text-7xl bottom-[20%] left-[10%] -rotate-6">memory</span>
             <span className="material-symbols-outlined absolute text-zinc-200 pointer-events-none select-none -z-10 text-5xl top-20 right-1/4 rotate-12">hub</span>
 
-            <Link to="/" className="fixed top-8 left-8 z-50 flex items-center gap-2 group">
-                <div className="bg-white border-2 border-black p-2 rounded-lg shadow-pop hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
-                    <span className="material-symbols-outlined text-black font-black">arrow_back</span>
-                </div>
-            </Link>
+            <header className="fixed top-4 left-0 right-0 z-[100] px-4">
+                <Link to="/" className="flex items-center gap-2 group">
+                    <div className="bg-white border-2 border-black p-2 rounded-lg shadow-pop hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+                        <span className="material-symbols-outlined text-black font-black">arrow_back</span>
+                    </div>
+                </Link>
+            </header>
 
             <main className="relative w-full max-w-2xl">
                 {/* Stickers */}

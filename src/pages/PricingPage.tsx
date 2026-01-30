@@ -113,21 +113,21 @@ const PricingPage = () => {
             <div className="blob-pop bg-accent-green w-[30rem] h-[30rem] top-[40%] -right-20 rounded-full"></div>
             <div className="blob-pop bg-secondary w-[50rem] h-[50rem] -bottom-40 left-1/2 -translate-x-1/2 rounded-full"></div>
 
-            <header className="fixed top-8 left-0 right-0 z-[100] px-6">
-                <nav className="mx-auto max-w-fit nav-glass rounded-full px-4 py-2 flex items-center gap-2">
+            <header className="fixed top-4 left-0 right-0 z-[100] px-4 md:px-6">
+                <nav className="mx-auto max-w-fit nav-glass rounded-full px-3 py-2 md:px-4 md:py-2 flex items-center gap-2">
                     <div className="flex items-center gap-2 pl-2 pr-4 border-r-2 border-black mr-2">
-                        <span className="material-symbols-outlined text-lab-pink fill-1">science</span>
-                        <span className="font-bold tracking-tighter text-lg uppercase">Noir Labs</span>
+                        <span className="material-symbols-outlined text-lab-pink fill-1 text-xl md:text-2xl">science</span>
+                        <span className="font-bold tracking-tighter text-base md:text-lg uppercase hidden sm:inline">Noir Labs</span>
                     </div>
-                    <div className="flex items-center gap-3">
-                        <Link to="/labs" className="px-4 py-2 text-sm font-bold hover:bg-pop-yellow rounded-full transition-colors border-2 border-transparent hover:border-black">Experiments</Link>
-                        <Link to="/pricing" className="px-4 py-2 text-sm font-bold bg-white border-2 border-black rounded-full hover:bg-accent-green transition-all shadow-sticker">Pricing</Link>
-                        <Link to="/survey" className="px-4 py-2 text-sm font-bold hover:bg-secondary/20 rounded-full transition-colors border-2 border-transparent hover:border-black">Research</Link>
+                    <div className="flex items-center gap-1 md:gap-3">
+                        <Link to="/labs" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold hover:bg-pop-yellow rounded-full transition-colors border-2 border-transparent hover:border-black">Experiments</Link>
+                        <Link to="/pricing" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold bg-white border-2 border-black rounded-full hover:bg-accent-green transition-all shadow-sticker">Pricing</Link>
+                        <Link to="/survey" className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold hover:bg-secondary/20 rounded-full transition-colors border-2 border-transparent hover:border-black hidden sm:inline-block">Research</Link>
                     </div>
                     <div className="ml-4 flex items-center gap-3">
                         {session ? (
                             <Link to="/profile" className="relative group">
-                                <div className="w-12 h-12 rounded-full border-2 border-black overflow-hidden shadow-pop group-hover:scale-110 transition-transform cursor-pointer bg-white" title={session.user.email}>
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-black overflow-hidden shadow-pop group-hover:scale-110 transition-transform cursor-pointer bg-white" title={session.user.email}>
                                     <img
                                         src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${session.user.email}`}
                                         alt="User Avatar"
@@ -135,13 +135,13 @@ const PricingPage = () => {
                                     />
                                 </div>
                                 {isPro && (
-                                    <div className="absolute -bottom-1 -right-1 bg-pop-yellow text-[10px] font-black border border-black px-1 rounded-sm rotate-12 shadow-sm">
+                                    <div className="absolute -bottom-1 -right-1 bg-pop-yellow text-[8px] md:text-[10px] font-black border border-black px-1 rounded-sm rotate-12 shadow-sm">
                                         PRO
                                     </div>
                                 )}
                             </Link>
                         ) : (
-                            <Link to="/login" className="bg-black text-white px-6 py-2 rounded-full text-sm font-black hover:bg-lab-pink hover:text-black transition-all border-2 border-black">
+                            <Link to="/login" className="bg-black text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-black hover:bg-lab-pink hover:text-black transition-all border-2 border-black">
                                 SIGN IN
                             </Link>
                         )}
@@ -149,16 +149,16 @@ const PricingPage = () => {
                 </nav>
             </header>
 
-            <main className="relative z-10 pt-48 pb-24">
-                <section className="max-w-7xl mx-auto px-6 mb-32 relative">
-                    <span className="material-symbols-outlined doodle-accent text-7xl top-0 left-0 -rotate-12">biotech</span>
-                    <span className="material-symbols-outlined doodle-accent text-8xl bottom-0 right-10 rotate-12">fluid_med</span>
-                    <div className="text-center mb-20">
-                        <div className="tape-label mb-6 bg-pop-yellow text-black border-black">COMPUTE ALLOCATION</div>
-                        <h1 className="text-7xl md:text-8xl font-black tracking-tighter mb-6">Choose your <span className="text-lab-pink italic drop-shadow-[4px_4px_0px_#000]">access.</span></h1>
-                        <p className="text-xl font-bold text-zinc-500 max-w-2xl mx-auto">Scale your AI research with flexible tiers designed for discovery and production-grade inference.</p>
+            <main className="relative z-10 pt-32 md:pt-48 pb-12 md:pb-24">
+                <section className="max-w-7xl mx-auto px-4 md:px-6 mb-20 md:mb-32 relative">
+                    <span className="material-symbols-outlined doodle-accent text-5xl md:text-7xl top-0 left-0 -rotate-12">biotech</span>
+                    <span className="material-symbols-outlined doodle-accent text-6xl md:text-8xl bottom-0 right-10 rotate-12">fluid_med</span>
+                    <div className="text-center mb-12 md:mb-20">
+                        <div className="tape-label mb-4 md:mb-6 bg-pop-yellow text-black border-black">COMPUTE ALLOCATION</div>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 md:mb-6 leading-tight">Choose your <span className="text-lab-pink italic drop-shadow-[4px_4px_0px_#000]">access.</span></h1>
+                        <p className="text-lg md:text-xl font-bold text-zinc-500 max-w-2xl mx-auto px-4">Scale your AI research with flexible tiers designed for discovery and production-grade inference.</p>
                     </div>
-                    <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
                         <div className="card-pricing shadow-[12px_12px_0px_0px_#05ffa1]">
                             <div className="mb-8">
                                 <span className="text-sm font-black uppercase tracking-widest text-zinc-400">Entry Tier</span>
@@ -283,7 +283,7 @@ const PricingPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="max-w-4xl mx-auto px-6 mb-40">
+                <section className="max-w-4xl mx-auto px-4 md:px-6 mb-20 md:mb-40">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl font-black tracking-tight">Curious Minds <span className="text-secondary">Ask.</span></h2>
                     </div>
@@ -311,16 +311,16 @@ const PricingPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="max-w-4xl mx-auto px-6 text-center">
-                    <div className="relative bg-white border-4 border-black p-16 rounded-[4rem] shadow-[16px_16px_0px_0px_rgba(1,205,254,1)]">
-                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-pop-yellow border-2 border-black rounded-full flex items-center justify-center rotate-12 shadow-pop">
-                            <span className="font-black text-xs">NEWSLETTER</span>
+                <section className="max-w-4xl mx-auto px-4 md:px-6 text-center">
+                    <div className="relative bg-white border-4 border-black p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-[12px_12px_0px_0px_rgba(1,205,254,1)] md:shadow-[16px_16px_0px_0px_rgba(1,205,254,1)]">
+                        <div className="absolute -top-8 -right-4 md:-top-10 md:-right-10 w-24 h-24 md:w-32 md:h-32 bg-pop-yellow border-2 border-black rounded-full flex items-center justify-center rotate-12 shadow-pop">
+                            <span className="font-black text-[10px] md:text-xs">NEWSLETTER</span>
                         </div>
-                        <h2 className="text-6xl font-black mb-8">Stay updated</h2>
-                        <p className="text-2xl font-bold text-zinc-600 mb-12">New model drops every Tuesday. Don't miss the next evolution.</p>
+                        <h2 className="text-4xl md:text-6xl font-black mb-6 md:mb-8">Stay updated</h2>
+                        <p className="text-lg md:text-2xl font-bold text-zinc-600 mb-8 md:mb-12">New model drops every Tuesday. Don't miss the next evolution.</p>
                         <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-                            <input className="flex-1 px-8 h-16 rounded-2xl border-4 border-black font-bold text-lg focus:ring-0 focus:outline-none placeholder:text-zinc-400" placeholder="Email address" type="email" />
-                            <button className="px-10 h-16 bg-black text-white rounded-2xl font-black text-xl hover:bg-secondary hover:text-black transition-all border-2 border-black">
+                            <input className="flex-1 px-6 h-14 md:px-8 md:h-16 rounded-2xl border-4 border-black font-bold text-base md:text-lg focus:ring-0 focus:outline-none placeholder:text-zinc-400" placeholder="Email address" type="email" />
+                            <button className="px-8 h-14 md:px-10 md:h-16 bg-black text-white rounded-2xl font-black text-lg md:text-xl hover:bg-secondary hover:text-black transition-all border-2 border-black">
                                 SUBSCRIBE
                             </button>
                         </form>
@@ -382,7 +382,7 @@ const PricingPage = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="pt-8 border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-black uppercase tracking-[0.2em] text-zinc-400">
+                    <div className="pt-8 border-t-2 border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 text-center md:text-left">
                         <p>© 2024 NOIR LABS. RESEARCH ONLY.</p>
                         <div className="flex items-center gap-6">
                             <span className="flex items-center gap-2 bg-accent-green/20 text-black px-3 py-1 rounded-full border border-black">

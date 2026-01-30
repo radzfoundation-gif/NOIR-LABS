@@ -117,7 +117,7 @@ const ProfilePage: React.FC = () => {
             <span className="material-symbols-outlined floating-icon text-6xl text-pop-purple bottom-[15%] right-[10%] -rotate-6">rocket_launch</span>
 
             <div className="flex min-h-screen">
-                <aside className="w-80 p-8 flex flex-col fixed h-full bg-white border-r-[6px] border-black z-50">
+                <aside className="w-80 p-8 hidden lg:flex flex-col fixed h-full bg-white border-r-[6px] border-black z-50">
                     <Link to="/" className="flex items-center gap-3 mb-12">
                         <div className="p-2 bg-black rounded-xl">
                             <span className="material-symbols-outlined text-white text-3xl fill-1">science</span>
@@ -144,7 +144,34 @@ const ProfilePage: React.FC = () => {
                     </button>
                 </aside>
 
-                <main className="flex-1 ml-80 p-12">
+                {/* Mobile Header */}
+                <header className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b-4 border-black z-50 flex items-center justify-between px-4">
+                    <Link to="/" className="flex items-center gap-2">
+                        <span className="material-symbols-outlined text-black text-2xl fill-1">science</span>
+                        <span className="font-black tracking-tighter text-xl uppercase">Noir Labs</span>
+                    </Link>
+                    <button onClick={handleLogout} className="text-black">
+                        <span className="material-symbols-outlined font-black text-2xl">logout</span>
+                    </button>
+                </header>
+
+                {/* Mobile Bottom Nav */}
+                <nav className="lg:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t-4 border-black z-50 flex justify-around items-center px-2">
+                    <Link to="/profile" className="flex flex-col items-center gap-1 p-2 text-black">
+                        <span className="material-symbols-outlined font-black text-2xl">person</span>
+                        <span className="text-[10px] font-black uppercase">Profile</span>
+                    </Link>
+                    <Link to="/labs" className="flex flex-col items-center gap-1 p-2 text-zinc-400 hover:text-black transition-colors">
+                        <span className="material-symbols-outlined font-black text-2xl">biotech</span>
+                        <span className="text-[10px] font-black uppercase">Labs</span>
+                    </Link>
+                    <Link to="/settings" className="flex flex-col items-center gap-1 p-2 text-zinc-400 hover:text-black transition-colors">
+                        <span className="material-symbols-outlined font-black text-2xl">settings</span>
+                        <span className="text-[10px] font-black uppercase">Settings</span>
+                    </Link>
+                </nav>
+
+                <main className="flex-1 lg:ml-80 p-4 pt-20 md:p-12 md:ml-80 pb-20 lg:pb-12">
                     <div className="max-w-6xl mx-auto">
                         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 mb-20 bg-white border-[6px] border-black p-10 rounded-[3rem] shadow-neon-green">
                             <div className="relative">
@@ -277,7 +304,7 @@ const ProfilePage: React.FC = () => {
                     </div>
                 </main>
             </div>
-            <footer className="ml-80 py-20 text-center border-t-[6px] border-black/5">
+            <footer className="lg:ml-80 py-20 text-center border-t-[6px] border-black/5 pb-24 lg:pb-20">
                 <div className="flex items-center justify-center gap-3 mb-4">
                     <span className="font-black tracking-tighter text-3xl uppercase">Noir Labs</span>
                 </div>

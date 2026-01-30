@@ -69,11 +69,11 @@ const LoginPage: React.FC = () => {
                 backgroundSize: '32px 32px'
             }}></div>
 
-            <Link to="/" className="fixed top-8 left-12 flex items-center gap-2 group">
-                <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center group-hover:bg-lab-pink transition-colors">
-                    <span className="material-symbols-outlined text-white fill-1">science</span>
+            <Link to="/" className="absolute top-4 left-4 md:fixed md:top-8 md:left-12 flex items-center gap-2 group z-50">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg flex items-center justify-center group-hover:bg-lab-pink transition-colors">
+                    <span className="material-symbols-outlined text-white fill-1 text-lg md:text-2xl">science</span>
                 </div>
-                <span className="font-black tracking-tighter text-xl uppercase">Noir Labs</span>
+                <span className="font-black tracking-tighter text-lg md:text-xl uppercase">Noir Labs</span>
             </Link>
 
             <div className="relative w-full max-w-[500px] z-10">
@@ -130,7 +130,12 @@ const LoginPage: React.FC = () => {
                     </form>
                     <div className="relative my-10">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t-2 border-black/10"></div>
+                            <div className="flex-1 text-center md:text-left pt-12 md:pt-0">
+                                {/* Use inline styling for text stroke as Tailwind arbitrary values can be tricky with specific chromium versions sometimes */}
+                                <h1 className="text-6xl sm:text-7xl md:text-[10rem] font-black leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '3px #ff71ce', color: 'transparent' }}>
+                                    JOIN
+                                </h1>
+                            </div>
                         </div>
                         <div className="relative flex justify-center">
                             <span className="bg-white px-4 text-xs font-black uppercase tracking-widest text-zinc-400">or connect with</span>

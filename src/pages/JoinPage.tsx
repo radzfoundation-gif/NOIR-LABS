@@ -66,9 +66,9 @@ const JoinPage: React.FC = () => {
 
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     {/* Left Side: Headlines */}
-                    <div className="flex-1 text-center md:text-left">
+                    <div className="flex-1 text-center md:text-left pt-12 md:pt-0">
                         {/* Use inline styling for text stroke as Tailwind arbitrary values can be tricky with specific chromium versions sometimes */}
-                        <h1 className="text-7xl md:text-[10rem] font-black leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '3px #ff71ce', color: 'transparent' }}>
+                        <h1 className="text-6xl sm:text-7xl md:text-[10rem] font-black leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '3px #ff71ce', color: 'transparent' }}>
                             JOIN
                         </h1>
                         <div className="inline-block px-6 py-2 bg-black text-white font-black text-xl uppercase tracking-widest -rotate-1 mb-6">

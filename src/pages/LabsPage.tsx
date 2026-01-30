@@ -305,15 +305,15 @@ const LabsPage: React.FC = () => {
                 </section>
             </main>
 
-            <footer className="fixed bottom-0 w-full bg-black text-white border-t-8 border-black py-2 px-8 flex justify-between items-center z-50">
-                <div className="flex items-center gap-10 whitespace-nowrap overflow-hidden">
+            <footer className="fixed bottom-0 w-full bg-black text-white border-t-8 border-black py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center z-50 gap-2 md:gap-0 h-auto md:h-12">
+                <div className="flex items-center gap-4 md:gap-10 whitespace-nowrap overflow-hidden w-full md:w-auto overflow-x-auto no-scrollbar">
                     <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-lab-lime animate-pulse border border-black"></div>
-                        <span className="text-[11px] font-black uppercase tracking-widest">SYSTEM_STATUS: OPTIMIZED</span>
+                        <div className="w-3 h-3 bg-lab-lime animate-pulse border border-black flex-shrink-0"></div>
+                        <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest">SYSTEM_STATUS: OPTIMIZED</span>
                     </div>
-                    <span className="text-[11px] font-black uppercase tracking-widest opacity-60">LATENCY: 14MS</span>
-                    <span className="text-[11px] font-black uppercase tracking-widest opacity-60">CORE_LOAD: 22%</span>
-                    <span className="text-[11px] font-black uppercase tracking-widest text-lab-lime">V3_POP_AESTHETIC_READY</span>
+                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest opacity-60 hidden sm:inline">LATENCY: 14MS</span>
+                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest opacity-60 hidden sm:inline">CORE_LOAD: 22%</span>
+                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-lab-lime hidden sm:inline">V3_POP_AESTHETIC_READY</span>
                 </div>
                 <div className="flex items-center gap-4">
                     <span className="text-[11px] font-black uppercase tracking-widest hidden md:block">© 2024 NOIR LABS RESEARCH FACILITY</span>

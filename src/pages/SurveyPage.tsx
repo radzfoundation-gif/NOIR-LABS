@@ -28,17 +28,17 @@ const SurveyPage: React.FC = () => {
             <span className="material-symbols-outlined absolute pointer-events-none opacity-60 select-none text-3xl text-pop-purple bottom-[10%] right-[20%] -rotate-6">rocket_launch</span>
             <span className="material-symbols-outlined absolute pointer-events-none opacity-60 select-none text-xl text-lab-pink bottom-[40%] left-[5%] rotate-45">favorite</span>
 
-            <header className="fixed top-6 left-0 right-0 z-[100] px-6">
-                <nav className="mx-auto max-w-fit bg-white border-2 border-black shadow-pop transition-all hover:-translate-y-0.5 rounded-full px-4 py-2 flex items-center gap-3">
+            <header className="fixed top-4 left-0 right-0 z-[100] px-4 md:px-6">
+                <nav className="mx-auto max-w-fit bg-white border-2 border-black shadow-pop transition-all hover:-translate-y-0.5 rounded-full px-3 py-2 md:px-4 md:py-2 flex items-center gap-2 md:gap-3">
                     <Link to="/" className="flex items-center gap-2 pr-4 border-r-2 border-black group">
-                        <span className="material-symbols-outlined text-lab-pink font-black group-hover:rotate-12 transition-transform text-xl">science</span>
-                        <span className="font-black tracking-tighter text-lg uppercase">Noir Labs</span>
+                        <span className="material-symbols-outlined text-lab-pink font-black group-hover:rotate-12 transition-transform text-lg md:text-xl">science</span>
+                        <span className="font-black tracking-tighter text-base md:text-lg uppercase hidden sm:inline">Noir Labs</span>
                     </Link>
-                    <Link to="/" className="px-4 py-1.5 text-xs font-black hover:bg-pop-yellow rounded-full transition-colors border border-transparent hover:border-black uppercase tracking-widest">
+                    <Link to="/" className="px-3 py-1.5 md:px-4 text-xs font-black hover:bg-pop-yellow rounded-full transition-colors border border-transparent hover:border-black uppercase tracking-widest whitespace-nowrap">
                         Back to Lab
                     </Link>
                     <div className="ml-1 flex items-center gap-2">
-                        <div className="bg-black text-white px-3 py-1.5 rounded-full text-[9px] font-black tracking-[0.2em] border border-black">
+                        <div className="bg-black text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-[9px] font-black tracking-[0.2em] border border-black">
                             V3 POP
                         </div>
                     </div>

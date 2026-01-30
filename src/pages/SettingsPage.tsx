@@ -127,7 +127,7 @@ const SettingsPage: React.FC = () => {
             <span className="material-symbols-outlined absolute pointer-events-none opacity-40 select-none text-3xl text-accent-green top-[20%] right-[15%] rotate-12">terminal</span>
             <span className="material-symbols-outlined absolute pointer-events-none opacity-40 select-none text-4xl text-pop-purple bottom-[15%] right-[12%] -rotate-6">hub</span>
 
-            <header className="fixed top-6 left-0 right-0 z-[100] px-4">
+            <header className="fixed top-4 left-0 right-0 z-[100] px-4">
                 <nav className="mx-auto max-w-fit bg-white border-2 border-black shadow-pop transition-all hover:-translate-y-0.5 rounded-full px-4 py-2 flex items-center gap-3">
                     <Link to="/" className="flex items-center gap-2 pr-4 border-r-2 border-black group">
                         <span className="material-symbols-outlined text-lab-pink font-black text-xl">science</span>
