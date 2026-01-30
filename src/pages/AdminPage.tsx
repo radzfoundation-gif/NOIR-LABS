@@ -33,6 +33,10 @@ const AdminPage: React.FC = () => {
             const { data: { user } } = await supabase.auth.getUser();
             if (!user) {
                 navigate('/login');
+            } else if (user.email !== 'radzfoundation@gmail.com') {
+                // Strict Admin Check
+                console.warn('Unauthorized admin access attempt:', user.email);
+                navigate('/'); // Redirect non-admins to home
             } else {
                 setUser(user);
             }
