@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -239,8 +239,8 @@ const PricingPage = () => {
                                 }}
                                 disabled={isLoading}
                                 className={`btn-pill w-full ${isPro
-                                        ? 'bg-accent-green text-black hover:bg-accent-green/90 hover:scale-105 active:scale-95 cursor-pointer'
-                                        : 'bg-black text-white hover:bg-lab-pink hover:text-black disabled:opacity-50 disabled:cursor-not-allowed'
+                                    ? 'bg-accent-green text-black hover:bg-accent-green/90 hover:scale-105 active:scale-95 cursor-pointer'
+                                    : 'bg-black text-white hover:bg-lab-pink hover:text-black disabled:opacity-50 disabled:cursor-not-allowed'
                                     }`}
                             >
                                 {isPro ? (

@@ -30,7 +30,7 @@ export const initXendit = () => {
  * Contoh alur yang benar:
  * Frontend -> Supabase Edge Function (bwaca Secret Key) -> Xendit API
  */
-export const createInvoice = async (amount: number, externalId: string) => {
+export const createInvoice = async (_amount: number, _externalId: string) => {
     // JANGAN lakukan fetch ke Xendit API langsung dari sini dengan Secret Key.
     // Panggil endpoint backend Anda sebagai gantinya.
     console.error('Create Invoice harus dilakukan di sisi server/backend!');
